@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>类数组对象</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script type="text/javascript" src="../3/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../3/underscore.js"></script>
+    <script type="text/javascript" src="../_h.js"></script>
+</head>
+
+<body>
+    <div class="dom"></div>
+    <div class="dom"></div>
+    <div class="dom"></div>
+    <script type="text/javascript">
+        
+    </script>
+    <script type="text/javascript">
+        var a = document.getElementsByTagName('div');
+        //length属性  length-1 存在
+        var b1 = {
+            0 : 123,
+            9 : 1,
+            length : 1.444
+        }
+        //length 0 
+        var b2 = {
+            0 : 123,
+            1 : 1,
+            length : 0
+        }
+
+        //length-1 不存在 
+        var b3 = {
+            0 : 123,
+            3 : 1,
+            length : 10
+        }
+        
+        //length-1 不存在 
+        var b4 = {
+            0 : 123,
+            0.5 : 1,
+            length : 1.5
+        }
+        
+
+        var c = [1,3,4]
+        
+        var d =function(){
+
+        }
+
+        var e = 'abcde';
+        document.length = 100
+        // for dom  
+        // 都是true
+        // console.log('js', h.isArrayLike(a) );
+        // console.log('jq', $.jqisArrayLike(a)); 
+        // console.log('_', _.isArrayLike(a) );
+
+
+       //  // for object :     且 length-1 存在
+       //  // 都是true
+
+        console.log('js', h.isArrayLike(b1) );
+        console.log('jq', $.jqisArrayLike(b1)); 
+        console.log('_', _.isArrayLike(b1) );
+
+       //  // for object :   length 为0
+       //  //都是true
+        // console.log('js', h.isArrayLike(b2) );
+        // console.log('jq', $.jqisArrayLike(b2)); 
+        // console.log('_', _.isArrayLike(b2) );
+
+       //  // for object :   length-1 不存在
+       //  // jq false
+        // console.log('js', h.isArrayLike(b3) );
+        // console.log('jq', $.jqisArrayLike(b3)); 
+        // console.log('_', _.isArrayLike(b3) );
+
+        
+
+       //  // for 数组 : 都是true
+        // console.log('js', h.isArrayLike(c) );
+        // console.log('jq', $.jqisArrayLike(c)); 
+        // console.log('_', _.isArrayLike(c) );
+
+       //  // for function : 
+       //  // _ true , 其他false
+       // console.log('js', h.isArrayLike(d) );
+       //  console.log('jq', $.jqisArrayLike(d)); 
+       //  console.log('_', _.isArrayLike(d) );
+
+       //  // for string : 
+       //  // js false ,jq 报错 , _ true 
+       // console.log('js', h.isArrayLike(e) );
+       //   console.log('jq', $.jqisArrayLike(e)); 
+       //  console.log('_', _.isArrayLike(e) );
+
+       //  // for window  : 
+       //  // js true ,jq false , _ true 
+       // console.log('js', h.isArrayLike(window) );
+       //  console.log('jq', $.jqisArrayLike(window)); 
+       //  console.log('_', _.isArrayLike(window) );
+
+       //  // for document  : 
+       //  // js true ,jq false , _ true 
+       // console.log('js', h.isArrayLike(document) );
+       //  console.log('jq', $.jqisArrayLike(document)); 
+       //  console.log('_', _.isArrayLike(document) );
+
+    </script>
+
+
+    <script type="text/javascript">
+        // var o = {
+        //     0:'a',
+        //     bbb : 'ddd',
+        //     99 :'b',
+        //     length : Math.pow(2,32) -2
+        // }
+        // var b  = Array.prototype.slice.call(o);
+
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+
+<body>
+    <script>
+	    "use strict";　　　　
+	    function f1() {　　　　
+	        console.log(this); //undefined 
+
+	    }
+	    f1()
+    </script>
+    <script>
+	    function f2() {　　　　
+	        console.log(this)　　;
+	        var x = 1;
+	        delete x
+	        console.log(x)
+	    }
+	    f2()
+    </script>
+
+    <script type="text/javascript">
+    	function f1(){
+	　　　　"use strict";
+		   // console.log(f1.caller)
+	// 　　　　console.log(f1.arguments)
+	// 	   console.log(arguments)
+	　　}
+	　　f1(1,3,4);
+    </script>
+</body>
+
+</html>

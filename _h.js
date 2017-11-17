@@ -1,3 +1,20 @@
+var h = {
+
+}
+
+//form 权威指南
+h.isArrayLike = function(o) {
+	
+    if(o &&                                    // o不是null、undefined等
+       typeof o === 'object' &&                // o是对象
+       isFinite(o.length) &&                   // o.length是有限数值
+       o.length >= 0 &&                        // o.length为非负值
+       o.length === Math.floor(o.length) &&    // o.length是整数
+       o.length < 4294967296)                  // o.length < 2^32
+       return true
+    else
+       return false
+}
 
 //继承
 var extend = function(sup, bass) {
@@ -41,6 +58,9 @@ var get__fun__ = function(o,fun){
 	return arguments.callee.r;
 }
 get__fun__.r = false;
+
+
+
 
 
 
